@@ -4,69 +4,69 @@
 
 ### words in UPPER-CASE are parameters to be supplied 
 
-### Feature-ToDo
+### Feature- `ToDo`
 
 Add a todo item without further instruction
 
-Format: todo ITEM
+Format: `todo ITEM_DESCRIPTION`
 
-Example: todo book
+Example: `todo book`
 
 Output: [T][ ] book
 
-### Feature-Deadline
+### Feature-`Deadline`
 
 Add an item with a due date
 
-Format: deadline ITEM / by X
+Format: `deadline ITEM_DESCRIPTION / by DUE_DATE`
 
-Example: dealine return book / by tue
+Example: `deadline return book / by tue`
 
 Output: [D][ ] return book (by: tue)
 
-### Feature-Event
+### Feature-`Event`
 
 Add an item with a start and fin
 
-Format: event ITEM /from X /to Y
+Format: `event ITEM_DESCRIPTION /from START_DATE /to END_DATE`
 
-Example: event party /from 1pm /to 3pm
+Example: `event party /from 1pm /to 3pm`
 
 Output: [E][ ] party (from: 1pm to:3pm)
 
-### Feature-Mark
+### Feature-`Mark`
 
 Tick an item as done
 
-Format: mark [ITEM NUMBER]
+Format: `mark ITEM_NUMBER`
 
-Example: mark 1
+Example: `mark 1`
 
 Output: [T][X] book
 
-### Feature-Unmark
+### Feature-`Unmark`
 
-Undo the item
+Undo the marked item
 
-Format: unmark[ITEM NUMBER]
+Format: `unmark ITEM_NUMBER`
 
-Example: unmark 1
+Example: `unmark 1`
 
 Output: [T][ ] book
 
-### Feature-Delete
+### Feature-`Delete`
 
 delete an item
 
-Format: delete[ITEM NUMBER]
+Format: `delete ITEM NUMBER`
 
-Example: delete 1
+Example: `delete 1`
 
-### Feature-List
+### Feature-`List`
 
 List all items
 
-Format: list
+Format: `list`
 
 Output:
 
@@ -74,13 +74,13 @@ Output:
   
 2. [E][ ]party(from:1pm to: 3pm)
 
-Feature-Find
+Feature-`Find`
 
 Returns all items with description
 
-Format: find [ITEM]
+Format: `find ITEM_DESCRIPTION`
 
-Example: find book
+Example: `find book`
 
  Output:
 
