@@ -55,14 +55,15 @@ public class TaskList {
 
     public static void commandTodo(ArrayList<Task> list, String line)  throws DukeException {
         try {
+            String valid = new String (line.substring(6));
             ToDo newtodo = new ToDo(line.substring(5));
             list.add(newtodo);
             System.out.println(newtodo);
-        }
-        catch (IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("please enter a description");
         }
     }
+
 
     /**
      * Line due

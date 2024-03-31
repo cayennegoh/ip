@@ -30,7 +30,7 @@ public class Storage {
                 case ("D"):
                     task = new Line(description, p[3].trim());
                     break;
-                case "E":
+                case ("E"):
                     task = new Event(description, p[3].trim(), p[4].trim());
                     break;
             }
@@ -41,7 +41,7 @@ public class Storage {
         }
         s.close();
         } catch (IOException e) {
-        System.out.println("file error");
+        System.out.println("file error: creating file");
         }
     }
 
