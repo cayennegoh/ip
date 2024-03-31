@@ -15,10 +15,7 @@ public class Storage {
      */
     public static void newFile(ArrayList<Task> tasks) {
     File f = new File("./data/avocado.txt");
-    if (!f.exists()) {
-        return;
-    }
-    try {
+        try {
         Scanner s = new Scanner(f);
         while (s.hasNext()) {
             Task task = null;
@@ -27,10 +24,10 @@ public class Storage {
             boolean isDone = p[1].trim().equals("1");
             String description = p[2].trim();
             switch (p[0].trim()) {
-                case "T":
+                case ("T"):
                     task = new ToDo(description);
                     break;
-                case "D":
+                case ("D"):
                     task = new Line(description, p[3].trim());
                     break;
                 case "E":
@@ -41,33 +38,33 @@ public class Storage {
                 task.setDone();
             }
             tasks.add(task);
-
         }
         s.close();
-    } catch (IOException e) {
+        } catch (IOException e) {
         System.out.println("file error");
+        }
     }
-}
 
     /**
      * saveTasks saves task to file
      * @param tasks task
      */
     public static void saveTasks(ArrayList<Task> tasks) {
-    File f = new File("./data/avocado.txt");
-    if (!f.exists()) {
-        f.getParentFile().mkdirs();
-    }
-    try {
-        PrintWriter fw = new PrintWriter(f);
-        for (Task task : tasks) {
-            fw.println(format(task));
+        File f = new File("./data/avocado.txt");
+        if (!f.exists()) {
+            f.getParentFile().mkdirs();
         }
-        fw.close();
-    } catch (FileNotFoundException e) {
-        System.out.println("saving error");
+        try {
+            PrintWriter fw = new PrintWriter(f);
+            for (Task task : tasks) {
+                fw.println(format(task));
+            }
+            fw.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("saving error");
+        }
     }
-}
+
 
     /**
      * format returns task in specific formate in file
@@ -75,16 +72,16 @@ public class Storage {
      * @return task type and description
      */
     private static String format(Task task) {
-    if (task instanceof ToDo) {
-        return "T | " + (task.isDone() ? "1" : "0") + " | " + task.getDescription();
-    } else if (task instanceof Line) {
-        return "D | " + (task.isDone() ? "1" : "0") + " | " + task.getDescription() +
-                " | " + ((Line) task).getBy();
-    } else if (task instanceof Event) {
-        return "E | " + (task.isDone() ? "1" : "0") + " | " + task.getDescription() +
-                " | " + ((Event) task).getFrom() + " | " + ((Event) task).getTo();
-    } else {
-        throw new IllegalArgumentException("");
+        if (task instanceof ToDo) {
+            return "T | " + (task.isDone() ? "1" : "0") + " | " + task.getDescription();
+        } else if (task instanceof Line) {
+            return "D | " + (task.isDone() ? "1" : "0") + " | " + task.getDescription() +
+                    " | " + ((Line) task).getBy();
+        } else if (task instanceof Event) {
+            return "E | " + (task.isDone() ? "1" : "0") + " | " + task.getDescription() +
+                    " | " + ((Event) task).getFrom() + " | " + ((Event) task).getTo();
+        } else {
+            throw new IllegalArgumentException("");
+        }
     }
-}
 }

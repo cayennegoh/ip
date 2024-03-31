@@ -25,7 +25,7 @@ public class Task {
         return getStatusIcon() + " " + getDescription();
     }
     public String taskDescription() {
-        return " [ ]" + getStatusIcon() + " " + getDescription();
+        return "[ ]" + getStatusIcon() + " " + getDescription();
     }
     public String getStatusIcon() {
         return (isDone ? "[X]" : "[ ]"); // mark done task with X

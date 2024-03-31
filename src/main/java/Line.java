@@ -22,9 +22,9 @@ public class Line extends Task {
     }
     @Override
     public String toString() {
-        return " [D]" + super.toString() + "(by: " + this.by + ")";
+        return " [D]" + super.toString() + " (by: " + this.by + ")";
     }
     public String taskDescription() {
-        return " [D]" + super.toString() + "(by: " + this.by + ")";
+        return " [D]" + super.toString() + " (by: " + this.by + ")";
     }
 }
