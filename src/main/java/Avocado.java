@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.File;
 
 /**
  * Avocado class is The main function for chatbot Avocado
